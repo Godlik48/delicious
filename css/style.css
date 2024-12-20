@@ -1,0 +1,417 @@
+/* Основні стилі */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #344d2f;
+    color: #333;
+    overflow: auto;
+    height: 100vh;
+}
+
+/* Банер */
+header.banner {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #c8beb9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in;
+}
+
+header.banner h1 {
+    font-size: 2.5em;
+    color: #d62828;
+    margin: 0;
+}
+
+header.banner p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.euro-treats-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #d62828;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.euro-treats-button:hover {
+    background-color: #e63939;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Анімація */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Сніжинки */
+.snowflake {
+    position: absolute;
+    top: -10px;
+    z-index: 9999;
+    color: white;
+    font-size: 2em;
+    user-select: none;
+    pointer-events: none;
+    animation: snowfall linear infinite;
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+.snowflake:nth-child(odd) {
+    animation-duration: 12s;
+    animation-delay: -2s;
+    font-size: 1.5em;
+}
+
+.snowflake:nth-child(even) {
+    animation-duration: 15s;
+    animation-delay: -4s;
+    font-size: 2.5em;
+}
+
+.snowflake:nth-child(1) {
+    left: 10%;
+}
+.snowflake:nth-child(2) {
+    left: 25%;
+}
+.snowflake:nth-child(3) {
+    left: 40%;
+}
+.snowflake:nth-child(4) {
+    left: 55%;
+}
+.snowflake:nth-child(5) {
+    left: 70%;
+}
+.snowflake:nth-child(6) {
+    left: 85%;
+}
+.snowflake:nth-child(7) {
+    left: 15%;
+}
+.snowflake:nth-child(8) {
+    left: 30%;
+}
+.snowflake:nth-child(9) {
+    left: 50%;
+}
+
+/* Смаколики */
+.treats {
+    width: 90vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 40px auto;
+    max-width: 1000px;
+    flex-wrap: wrap;
+}
+
+.treat {
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: float 4s ease-in-out infinite;
+}
+
+.treat img {
+    width: 15vw;
+    max-width: 150px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.treat:hover img {
+    transform: scale(1.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Спливаючі вікна */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 400px;
+    display: none;
+    z-index: 10;
+    animation: modalAppear 0.5s forwards;
+}
+
+.modal:target {
+    display: block;
+}
+
+.modal h2 {
+    font-size: 1.8em;
+    margin: 0 0 10px;
+    color: #d62828;
+}
+
+.modal p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.modal .close {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    font-size: 1em;
+    text-decoration: none;
+    color: #d62828;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.modal .close:hover {
+    color: #333;
+}
+
+/* Стиль текстового блока */
+.text-content {
+    max-width: 900px;
+    width: 80vw;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f0f4f7;
+    color: #344d2f;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    animation: fadeIn 2s ease-in;
+    text-align: justify;
+}
+
+.text-content h2 {
+    font-size: 2em;
+    color: #a81817;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-size: 1.2em;
+    color: #344d2f;
+    margin-bottom: 20px;
+}
+
+.text-content a {
+    color: #fac57d;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.text-content a:hover {
+    color: #a81817;
+}
+
+/* Стиль кнопки "Назад" */
+.back-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #303a43;
+    color: #344d2f;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    border: 2px solid #344d2f;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #fac57d;
+    color: #f0f4f7;
+    border-color: #f0f4f7;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.back-button:active {
+    background-color: #c8beb9;
+    color: #344d2f;
+    border-color: #344d2f;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Футер */
+.main-footer {
+    color: #e9e5e1;
+    background-color: rgb(31, 49, 2, 0.7);
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    border-radius: 50% 20% / 10% 40%;
+    animation: footerFadeIn 1.5s ease-out forwards;
+}
+
+@keyframes footerFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body:not(.no-footer-animation) .main-footer {
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2vh;
+}
+
+.main-footer p {
+    margin: 10px 0;
+    font-size: 1em;
+    color: #e9e5e1;
+}
+
+.footer-note {
+    font-size: 0.9em; 
+    color: #555; 
+}
+
+.back-to-top {
+    color: #d62828;
+    text-decoration: underline; 
+    transition: color 0.3s;
+}
+
+.back-to-top:hover {
+    color: #e63939; 
+}
+footer a{
+    color: #830e10;
+}
+/* Адаптивність для планшетів та мобільних (до 768px) */
+@media (max-width: 768px) {
+    .treats {
+        flex-direction: row;
+        justify-content: center; 
+        flex-wrap: wrap; 
+        gap: 20px; 
+    }
+
+    .treat {
+        flex: 0 1 30%; 
+        max-width: 150px; 
+    }
+
+    .treat img {
+        width: 100%; 
+        height: auto;
+    }
+}
+
+/* Адаптивність для мобільних (до 480px) */
+@media (max-width: 480px) {
+    .treats {
+        flex-direction: column; /
+        justify-content: center;
+        align-items: center; 
+        gap: 15px;
+    }
+
+    .treat {
+        width: 80%;
+    }
+
+    .treat img {
+        width: 100%; 
+    }
+}
+/* Анімації */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes snowFall {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 100%;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

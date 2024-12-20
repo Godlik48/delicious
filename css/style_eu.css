@@ -1,0 +1,346 @@
+/* Основные стили */
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #04202C; 
+    color: #C9D1C8; 
+    overflow-x: hidden;
+}
+.container{
+    width: 100vw;
+}
+header.banner {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #304040; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in;
+}
+
+header.banner h1 {
+    font-size: 2.5em;
+    color: #C9D1C8; 
+    margin: 0;
+}
+
+header.banner p {
+    font-size: 1.2em;
+    color: #5B7065; 
+}
+
+.euro-treats-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #5B7065; 
+    color: #C9D1C8; 
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.euro-treats-button:hover {
+    background-color: #304040; 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Смаколики */
+.treats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 40px auto;
+    max-width: 1000px;
+    flex-wrap: wrap; 
+}
+
+.treat {
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: float 4s ease-in-out infinite;
+}
+
+.treat img {
+    width: 15vw; 
+    max-width: 150px; 
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+
+.treat:hover img {
+    transform: scale(1.2); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+}
+
+/* Спливаючі вікна */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: #304040; /* Фон модальных окон */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 400px;
+    display: none;
+    z-index: 10;
+    animation: modalAppear 0.5s forwards;
+}
+
+.modal:target {
+    display: block;
+}
+
+.modal h2 {
+    font-size: 1.8em;
+    margin: 0 0 10px;
+    color: #C9D1C8; 
+}
+
+.modal p {
+    font-size: 1.1em;
+    color: #C9D1C8; 
+}
+
+.modal .close {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    font-size: 1em;
+    text-decoration: none;
+    color: #C9D1C8; 
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.modal .close:hover {
+    color: #5B7065; 
+}
+
+.flag {
+    width: 8vw; 
+    max-width: 100px; 
+    height: auto; 
+    margin: 0 auto; 
+    display: block; 
+    border: none; 
+    border-radius: 0; 
+}
+/* Стиль текстового блока */
+.text-content {
+    max-width: 900px;
+    width: 80vw;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #304040;
+    color: #C9D1C8; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    animation: fadeIn 2s ease-in;
+    align-content: center;
+}
+
+.text-content h2 {
+    font-size: 2em;
+    color: #5B7065; 
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Дополнительный эффект для ссылок */
+.text-content a {
+    color: #C9D1C8;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.text-content a:hover {
+    color: #5B7065;
+}
+/* Кнопка назад */
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #5B7065; 
+    color: #C9D1C8; 
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.back-button:hover {
+    background-color: #304040; 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Адаптивность для планшетов и мобильных (до 768px) */
+@media (max-width: 768px) {
+    .treats {
+        flex-direction: row;
+        justify-content: center; 
+        flex-wrap: wrap; 
+        gap: 20px; 
+    }
+
+    .treat {
+        flex: 0 1 30%; 
+        max-width: 150px; 
+    }
+
+    .treat img {
+        width: 100%; 
+        height: auto;
+    }
+}
+/* Футер */
+.main-footer {
+    color: #e9e5e1;
+    background-color: rgb(91, 112, 101, 0.9); 
+    padding: 20px 0; 
+    text-align: center; 
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); 
+    opacity: 0; 
+    transform: translateY(20px); 
+    border-radius: 50% 20% / 10% 40%;
+    animation: footerFadeIn 1.5s ease-out forwards; 
+}
+
+/* Анимация появления */
+@keyframes footerFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+body:not(.no-footer-animation) .main-footer {
+    animation-delay: 1s; 
+    animation-fill-mode: forwards; 
+}
+.footer-container {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 2vh; 
+}
+
+.main-footer p {
+    font-size: 1em; 
+    margin: 0.5vh 0; 
+}
+
+.footer-note {
+    font-size: 0.9em; 
+    color: #e9e5e1; 
+}
+
+.back-to-top {
+    color: #d62828;
+    text-decoration: underline;
+    transition: color 0.3s; 
+}
+
+.back-to-top:hover {
+    color: #e63939; /
+}
+footer a{
+    color: #830e10;
+}
+/* Адаптивность для мобильных (до 480px) */
+@media (max-width: 480px) {
+    .treats {
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        width: 80vw;
+    }
+
+    .treat {
+        width: 80%; 
+    }
+
+    .treat img {
+        width: 100%; 
+    }
+    .flag{
+        width: 15vw;
+    }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes snowFall {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 100%;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
